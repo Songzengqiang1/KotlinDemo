@@ -1,5 +1,6 @@
 package com.lkl.demo.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -11,7 +12,8 @@ import com.lkl.demo.https.ProgressSubscriber
 
 class MainActivity : BaseActivity() {
 
-    private var btn: Button? = null
+    private var mTranslationBtn: Button? = null
+    private var mAlBumBtn: Button? = null
 
     override fun preInitView() {
 
@@ -22,7 +24,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
-        btn = findViewById(R.id.btn1) as Button
+        mTranslationBtn = findViewById(R.id.btn1)
+        mAlBumBtn = findViewById(R.id.btn2)
     }
 
     override fun initEvent(savedInstanceState: Bundle?) {
@@ -30,8 +33,13 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initViewListener() {
-        btn?.setOnClickListener {
-            requestNetwork()
+        mTranslationBtn?.setOnClickListener {
+           val intent1 : Intent = Intent(this, TranslationActivity::class.java)
+            startActivity(intent1)
+        }
+        mAlBumBtn?.setOnClickListener {
+            val intent2 : Intent = Intent(this, PictureActivity::class.java)
+            startActivity(intent2)
         }
     }
 
@@ -49,16 +57,5 @@ class MainActivity : BaseActivity() {
             }
         }
         HttpUtil.instance.userLogin("lisi", "123456", this, progressSubscriber)
-    }
-
-    val sdfs = object : ProgressSubscriber<UserInfoVo> (this@MainActivity, "sdfsf") {
-        override fun _onNext(retData: UserInfoVo?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        override fun _onError(errorCode: Int, msg: String) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
     }
 }

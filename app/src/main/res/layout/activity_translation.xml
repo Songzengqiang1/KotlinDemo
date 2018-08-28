@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/lan_from"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:text="中文"
+        android:background="@android:color/holo_purple"
+        />
+
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/lan_to"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:text="英文"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_purple"
+        android:layout_marginRight="30dp"
+        />
+
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="18dp"
+        android:gravity="center_vertical"
+        android:text="译文："
+        android:layout_below="@+id/lan_from"
+        android:layout_marginRight="30dp"
+        />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/translation"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:text="翻译"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_below="@+id/lan_from"
+        android:layout_marginRight="30dp"
+        />
+
+    <EditText
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/edit_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content"
+        />
+
+    <TextView
+        android:id="@+id/to_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="18dp"
+        />
+
+</RelativeLayout>
